@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        -webkit-tap-highlight-color: transparent;
+        @apply text-gray-900;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold;
+    }
+}
+
+@layer components {
+    a.link {
+        @apply text-primary no-underline focus:underline outline-none;
+    }
+
+    .arrowafter::after {
+        content: '\2192';
+        @apply ml-1;
+    }
+
+    .arrowbefore::before {
+        content: '\2190';
+        @apply mr-1;
+    }
+}
