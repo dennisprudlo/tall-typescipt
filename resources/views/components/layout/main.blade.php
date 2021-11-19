@@ -48,7 +48,7 @@
 
         {{-- Include Livewire scripts --}}
         <livewire:scripts />
-        <livewire:modals />
+        <livewire:modal-container />
 
         {{-- Include main scripts --}}
         <script src="{{ mix('js/app.js') }}" charset="utf-8"></script>

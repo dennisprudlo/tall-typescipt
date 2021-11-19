@@ -5,7 +5,7 @@ namespace App\Livewire;
 use Illuminate\View\View;
 use Livewire\Component;
 
-class Modals extends Component {
+class ModalContainer extends Component {
 
     /**
      * The id of the currently active component
@@ -47,7 +47,7 @@ class Modals extends Component {
             return implode('', array_map(fn ($filePart) => ucfirst($filePart), explode('-', $pathPart)));
         }, explode('.', $component)));
 
-        $class = config('livewire.class_namespace').$path;
+        $class = config('livewire.class_namespace').'\\'.$path;
 
         //
         // If the modal class to open does not exist
@@ -89,6 +89,6 @@ class Modals extends Component {
      * @return View
      */
     public function render () : View {
-        return view('livewire.modals');
+        return view('modal-container');
     }
 }

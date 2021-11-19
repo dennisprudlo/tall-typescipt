@@ -17,8 +17,8 @@ mix.options({
 	}
 });
 
-mix.ts('resources/js/app.ts', 'public/js/app.min.js');
-mix.postCss('resources/css/app.css', 'public/css/app.min.css', [
+mix.ts('resources/js/app.ts', 'public/js/app.js');
+mix.postCss('resources/css/app.css', 'public/css/app.css', [
 	require('tailwindcss'),
 	require('autoprefixer')
 ]);
