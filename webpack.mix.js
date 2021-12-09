@@ -27,6 +27,7 @@ if (mix.inProduction()) {
 	mix.version();
 }
 
+mix.disableNotifications();
 // mix.disableSuccessNotifications();
 
 // mix.browserSync({

@@ -1,7 +1,7 @@
 @php
-    $title          = config('app.name', '');
-    $description    = config('app.description', '');
-    $keywords       = config('app.keywords', '');
+    $title          = trans('app.name', '');
+    $description    = trans('app.description')
+    $keywords       = trans('app.keywords', '');
 @endphp
 
 <!DOCTYPE html>
@@ -32,12 +32,15 @@
 
         {{-- Include main styles --}}
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-        <script src="https://kit.fontawesome.com/{{ config('services.font-awesome') }}.js" crossorigin="anonymous"></script>
 
+        {{-- Custom head --}}
         @yield('head')
 
         {{-- Include Livewire styles --}}
         <livewire:styles />
+
+        {{-- Custom styles --}}
+        @stack('styles')
     </head>
     <body>
 
@@ -52,6 +55,8 @@
 
         {{-- Include main scripts --}}
         <script src="{{ mix('js/app.js') }}" charset="utf-8"></script>
+
+        {{-- Custom scripts --}}
         @stack('scripts')
     </body>
 </html>
