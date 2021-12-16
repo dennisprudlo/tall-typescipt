@@ -36,12 +36,20 @@ if (! function_exists('current_commit')) {
      * @return object
      */
     function current_commit () : object {
-        $head = file_get_contents(base_path('.git/HEAD'));
-        $currentBranch = $head ? trim(last(explode('/', $head))) : 'main';
-        $lastCommitTime = filemtime(base_path(sprintf('.git/refs/heads/%s', $currentBranch)));
+        try {
+            $head = file_get_contents(base_path('.git/HEAD'));
+            $currentBranch = $head ? trim(last(explode('/', $head))) : 'main';
+            $lastCommitTime = filemtime(base_path(sprintf('.git/refs/heads/%s', $currentBranch)));
 
-        $lastCommitHash = file_get_contents(base_path(sprintf('.git/refs/heads/%s', $currentBranch)));
-        $lastCommitHash = $lastCommitHash ? trim($lastCommitHash) : 'initial';
+            $lastCommitHash = file_get_contents(base_path(sprintf('.git/refs/heads/%s', $currentBranch)));
+            $lastCommitHash = $lastCommitHash ? trim($lastCommitHash) : 'initial';
+        } catch (Throwable $throwable) {
+            return (object) [
+                'branch' => 'main',
+                'time' => 'You look great!',
+                'hash' => '441b768'
+            ];
+        }
 
         return (object) [
             'branch' => $currentBranch,
