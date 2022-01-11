@@ -16,7 +16,7 @@
         <meta name="robots"         content="none">
 
         @hasSection('title')
-            <title>@yield('title', $title) | {{ $title }}</title>
+            <title>@yield('title', $title) | {{ $title }}</title>
         @else
             <title>{{ $title }} | {{ $description }}</title>
         @endif
