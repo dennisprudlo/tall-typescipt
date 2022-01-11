@@ -17,7 +17,7 @@ class ModalContainer extends Component {
     /**
      * The list of the components currently in the stack
      *
-     * @var array<string, array>
+     * @var array<string, array<mixed>>
      */
     public array $components = [];
 
