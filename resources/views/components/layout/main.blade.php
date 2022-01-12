@@ -1,7 +1,7 @@
 @php
-    $title          = trans('app.name', '');
-    $description    = trans('app.description')
-    $keywords       = trans('app.keywords', '');
+    $title          = trans('app.name');
+    $description    = trans('app.description');
+    $keywords       = trans('app.keywords');
 @endphp
 
 <!DOCTYPE html>
