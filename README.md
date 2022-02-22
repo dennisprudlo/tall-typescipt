@@ -2,11 +2,11 @@
 This Laravel template has everything a TALL + Typescript project needs. The following versions of each component are installed:
 
 - Tailwind *(^3.0)*
-- Alpine.js *(^3.5)*
-- Laravel *(^8.75)*
-- Livewire *(^2.8)*
+- Alpine.js *(^3.9)*
+- Laravel *(^9.2)*
+- Livewire *(^2.10)*
 - Typescipt *(^4.5)*
-- Larastan *(^1.0)*
+- Larastan *(^2.0)*
 
 ### Setting up
 Using this template requires a few steps for the initial setup.
