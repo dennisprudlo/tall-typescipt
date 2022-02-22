@@ -12,9 +12,7 @@ const mix = require('laravel-mix');
  */
 
 mix.options({
-	terser: {
-		extractComments: false,
-	}
+	terser: { extractComments: false }
 });
 
 mix.ts('resources/js/app.ts', 'public/js/app.js');
@@ -26,10 +24,3 @@ mix.postCss('resources/css/app.css', 'public/css/app.css', [
 if (mix.inProduction()) {
 	mix.version();
 }
-
-mix.disableNotifications();
-// mix.disableSuccessNotifications();
-
-// mix.browserSync({
-//     proxy: 'https://application.local'
-// });

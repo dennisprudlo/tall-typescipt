@@ -9,19 +9,19 @@ This Laravel template has everything a TALL + Typescript project needs. The foll
 - Larastan *(^1.0)*
 
 ### Setting up
-Using the template requires a few steps for initial setup.
+Using this template requires a few steps for the initial setup.
 
-1. Remove the template's Git repository
+1. Remove the template's Git repository and initialize a new one
 ```shell
-rm -rf .git
+rm -rf .git && git init
 ```
 
-2. Install project dependencies
+2. Install the project dependencies
 ```shell
 composer install && npm ci
 ```
 
-3. Generate .env file and the application encryption key
+3. Generate an .env file and the application encryption key
 ```shell
 php -r "file_exists('.env') || copy('.env.example', '.env');" && php artisan key:generate
 ```
