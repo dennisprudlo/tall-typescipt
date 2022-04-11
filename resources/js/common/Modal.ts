@@ -16,7 +16,26 @@ export const Modal = (path?: string, params?: any) => {
                 return;
             }
 
-            this.show = false;
+            this.hideModal();
+        },
+        hideModal (force = false, skipPreviousModals = 0) {
+            if (skipPreviousModals > 0) {
+                for ( var i = 0; i < skipPreviousModals; i++ ) {
+                    this.componentHistory.pop();
+                }
+            }
+
+            const id = this.componentHistory.pop();
+
+            if (id && force === false) {
+                if (id && this.activeComponent !== id) {
+                    this.setActiveModalComponent(id, true);
+                } else {
+                    this.show = false;
+                }
+            } else {
+                this.show = false;
+            }
         },
         setActiveModalComponent (id: any, skip = false) {
             this.show = true;
@@ -76,24 +95,7 @@ export const Modal = (path?: string, params?: any) => {
             });
 
             (window as any).Livewire.on('closeModal', (force = false, skipPreviousModals = 0) => {
-
-                if (skipPreviousModals > 0) {
-                    for ( var i = 0; i < skipPreviousModals; i++ ) {
-                        this.componentHistory.pop();
-                    }
-                }
-
-                const id = this.componentHistory.pop();
-
-                if (id && force === false) {
-                    if (id) {
-                        this.setActiveModalComponent(id, true);
-                    } else {
-                        this.show = false;
-                    }
-                } else {
-                    this.show = false;
-                }
+                this.hideModal(force, skipPreviousModals);
             });
 
             (window as any).Livewire.on('activeModalComponentChanged', (id) => {
