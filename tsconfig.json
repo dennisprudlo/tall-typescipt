@@ -9,5 +9,5 @@
         "noImplicitAny": false,
         "esModuleInterop": true
     },
-    "include": ["resources/js/**/*"]
+    "include": [ "resources/js/**/*" ]
 }
